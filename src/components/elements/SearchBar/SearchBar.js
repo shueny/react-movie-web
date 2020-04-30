@@ -1,11 +1,46 @@
 import React, {Component} from 'react';
-import './SearchBar.css';
+import FontAwesome from 'react-fontawesome';
+import {
+  RMDBSearchBar,
+  RMDBSearchContent,
+  RMDBSearchIcon,
+  RMDBSearchInput,
+} from './SearchBarStyle';
 
 class SearchBar extends Component {
-  state = {};
+  state = {
+    value: '',
+  };
+
+  timeout = null;
+
+  doSearch = (event) => {
+    const {value} = this.state;
+    this.setState({value: event.target.value});
+    clearTimeout(this.timeout);
+
+    this.timeout = setTimeout(() => {
+      this.props.callback(value);
+    }, 500);
+  };
 
   render() {
-    return <div>Search Bar</div>;
+    const {value} = this.state;
+    return (
+      <RMDBSearchBar>
+        <RMDBSearchContent>
+          <RMDBSearchIcon>
+            <FontAwesome name="search" />
+          </RMDBSearchIcon>
+          <RMDBSearchInput
+            type="text"
+            placeholder="Search"
+            onChange={this.doSearch}
+            value={value}
+          />
+        </RMDBSearchContent>
+      </RMDBSearchBar>
+    );
   }
 }
 

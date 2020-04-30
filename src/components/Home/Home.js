@@ -64,6 +64,25 @@ export default class Home extends React.Component {
     this.fetchData(endpoint);
   };
 
+  searchItems = (searchTerm) => {
+    console.log(searchTerm);
+    const {currentPage} = this.state;
+    let endpoint = '';
+    this.setState({
+      movies: [],
+      isLoading: true,
+      searchTerm,
+    });
+
+    if (searchTerm === '') {
+      endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=zh-TW&page=${currentPage +
+        1}`;
+    } else {
+      endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=zh-TW&query=${searchTerm}`;
+    }
+    this.fetchData(endpoint);
+  };
+
   render() {
     const {heroImage} = this.state;
     console.log(heroImage);
@@ -75,7 +94,7 @@ export default class Home extends React.Component {
           title={heroImage.original_title}
           text={heroImage.overview}
         />
-        <SearchBar />
+        <SearchBar callback={this.searchItems} />
         <FourColGrid />
         <Spinner />
         <LoadMoreBtn />
