@@ -35,3 +35,15 @@ class Alpha extends Component {
     );
   }
 }
+
+// Beta class
+class Beta extends Component {
+  state = {
+    alphaValue: this.props.fromAlpha,
+    betaValue: 'This data from Beta',
+  };
+
+  render() {
+    return <div />;
+  }
+}
