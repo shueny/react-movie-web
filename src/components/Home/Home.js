@@ -84,7 +84,14 @@ export default class Home extends React.Component {
   };
 
   render() {
-    const {heroImage} = this.state;
+    const {
+      heroImage,
+      searchTerm,
+      isLoading,
+      movies,
+      currentPage,
+      totalPage,
+    } = this.state;
     console.log(heroImage);
     if (!heroImage) return null;
     return (
@@ -95,9 +102,32 @@ export default class Home extends React.Component {
           text={heroImage.overview}
         />
         <SearchBar callback={this.searchItems} />
-        <FourColGrid />
-        <Spinner />
-        <LoadMoreBtn />
+        <RMDBHomeGrid>
+          <FourColGrid
+            header={searchTerm ? 'Search Results' : 'Popular Movies'}
+            loading={isLoading}>
+            {movies.map((element, i) => {
+              return (
+                <MovieThumb
+                  key={i}
+                  clickable={true}
+                  image={
+                    element.poster_path
+                      ? `${IMAGE_BASE_URL}${POSTER_SIZE}${element.poster_path}`
+                      : './images/no_image.jpg'
+                  }
+                  movieId={element.id}
+                  movieName={element.original_title}
+                />
+              );
+            })}
+          </FourColGrid>
+          {isLoading && <Spinner />}
+          {currentPage <= totalPage &&
+            !isLoading && (
+              <LoadMoreBtn text="Load More" onClick={this.loadMoreData} />
+            )}
+        </RMDBHomeGrid>
       </RMDBHome>
     );
   }

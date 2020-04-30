@@ -1,8 +1,8 @@
 import React from 'react';
-import './MovieThumb.css';
+import {MovieThumbImg, Clickable} from './MovieThumbStyle';
 
 const MovieThumb = (props) => {
-  return <div>MovieThumb</div>;
+  return <MovieThumbImg src={props.image} alt="moviethunb" />;
 };
 
 export default MovieThumb;

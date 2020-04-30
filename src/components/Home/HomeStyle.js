@@ -5,7 +5,7 @@ export const RMDBHome = styled.div `
 `;
 
 export const RMDBHomeGrid = styled.div `
-    max-width: 1280 px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20 px;
+    padding: 0 20px;
 `;

@@ -1,8 +1,12 @@
 import React from 'react';
-import './LoadMoreBtn.css';
+import {LoadmoreBtn, LoadmoreBtnP} from './LoadMoreBtnStyle';
 
 const LoadMoreBtn = (props) => {
-  return <div>LoadMoreBtn</div>;
+  return (
+    <LoadmoreBtn onClick={props.onClick}>
+      <LoadmoreBtnP>{props.text}</LoadmoreBtnP>
+    </LoadmoreBtn>
+  );
 };
 
 export default LoadMoreBtn;

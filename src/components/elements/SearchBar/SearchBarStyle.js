@@ -16,26 +16,25 @@ export const RMDBSearchContent = styled.div `
   background: #353535;
   margin: 0 auto;
   border-radius: 40px;
-  position: relative;
-  color: # fff;
+  display: inline-flex;
+  color: #fff;
 `;
 
-export const RMDBSearchIcon = styled.i `
-    position: absolute;
-    left: 20px;
-    top: 12px;
-    color: #fff;
+export const RMDBSearchIcon = styled.div `
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 8%;
 `;
 
 export const RMDBSearchInput = styled.input `
     font-family: 'Lucida Grande', sans-serif;
-    font-size: 38px;
-    position: relative;
-    margin: 8px 0 0 60px;
+    font-size: 24px;
+    margin: 8px 0 0 0px;
     border: 0;
     background: transparent;
     height: 40px;
-    width: 90% ;
+    width: 100% ;
     color: #fff;
     &: focus {
       outline: none;
