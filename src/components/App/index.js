@@ -1,7 +1,13 @@
 import React from "react";
-import { Header } from "../elements";
+import { Header } from "../elements/index";
+import Home from "../Home";
 
 const Index = () => {
-  return "APP";
+  return (
+    <div>
+      <Header />
+      <Home />
+    </div>
+  );
 };
 export default Index;
