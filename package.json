@@ -1,42 +1,18 @@
 {
-    "name": "react_movie_db_course",
-    "version": "0.2.0",
-    "private": true,
-    "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^1.2.28",
-        "@fortawesome/free-solid-svg-icons": "^5.13.0",
-        "@fortawesome/react-fontawesome": "^0.1.9",
-        "prop-types": "^15.7.2",
-        "react": "^16.8.6",
-        "react-bootstrap": "^1.0.0",
-        "react-dom": "^16.8.6",
-        "react-fontawesome": "^1.7.1",
-        "react-router-dom": "^5.0.1",
-        "react-scripts": "^3.4.1",
-        "styled-components": "^5.1.0",
-        "webpack": "^4.42.0"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "@babel/core": "^7.9.0",
-        "@babel/preset-env": "^7.9.5",
-        "babel-loader": "^8.1.0"
-    }
+  "name": "react_movie_db_course",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-fontawesome": "^1.6.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
