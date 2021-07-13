@@ -1,8 +1,9 @@
 import React from "react";
+import FontAwesome from "react-fontawesome";
 import { Container, Grid } from "@material-ui/core";
-import "./HeroImage.css";
+import "./MovieThumb.css";
 
 const Index = () => {
-  return "HeroImage";
+  return "MovieThumb";
 };
 export default Index;
