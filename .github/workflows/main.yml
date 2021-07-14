@@ -23,7 +23,6 @@ jobs:
       USER_NAME: shueny
       USER_EMAIL: shuen29@gmail.com
       PUBLISH_DIR: ./dist
-      process.env.CI: false
     runs-on: ubuntu-latest
     strategy:
       matrix:
