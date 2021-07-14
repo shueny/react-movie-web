@@ -17,10 +17,10 @@ const Index = () => {
           alignItems="center"
         >
           <Grid item xs={6}>
-            <img src={logo} className="rmdb-logo" />
+            <img src={logo} className="rmdb-logo" alt="rmdb-logo" />
           </Grid>
           <Grid item xs={6}>
-            <img src={tmdbLogo} className="rmdb-tmdb-logo" />
+            <img src={tmdbLogo} className="rmdb-tmdb-logo" alt="rmdb-logo" />
           </Grid>
         </Grid>
         "Header"

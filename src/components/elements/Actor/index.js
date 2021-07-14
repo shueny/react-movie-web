@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Actor.css";
+// import "./Actor.css";
 
 const Index = () => {
   return "Actor";
