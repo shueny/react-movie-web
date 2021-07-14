@@ -4,7 +4,7 @@ import "./HeroImage.css";
 
 const Index = (props) => {
   const { imageUrl, title, text } = props;
-  console.log(props);
+
   return (
     <div
       className="rmdb-heroimage"

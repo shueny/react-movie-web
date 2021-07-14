@@ -5,6 +5,7 @@ import {
   Card,
   CardMedia,
   CardContent,
+  Typography,
 } from "@material-ui/core";
 import "./FourColGrid.css";
 import {
@@ -17,39 +18,31 @@ import {
 import { MovieThumb } from "../index";
 
 const Index = (props) => {
-  const { source, title } = props;
+  const { source, title, isLoading } = props;
 
   return (
     <React.Fragment>
       {title ? (
         <div className="rmdb-grid ">
-          <h1>{title}</h1>
+          <Typography
+            gutterBottom
+            variant="h1"
+            component="h1"
+            style={{ marginTop: "0.5em" }}
+          >
+            {title}
+          </Typography>
         </div>
       ) : null}
       <Grid container spacing={3}>
         {source.map((v) => {
-          console.log("source item:", v);
-          return <MovieThumb item={v} />;
+          // console.log("source item:", v);
+          return (
+            <MovieThumb item={v} isLoading={isLoading} key={`thumb-${v.id}`} />
+          );
         })}
       </Grid>
     </React.Fragment>
   );
 };
 export default Index;
-
-const Elements = (props) => {
-  const { item } = props;
-  console.log(item);
-  return (
-    <Grid item xs={3} key={`${item.id}`}>
-      <Card>
-        <CardMedia
-          className=""
-          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${item.backdrop_path}`}
-          title="Paella dish"
-        />
-        <CardContent></CardContent>
-      </Card>
-    </Grid>
-  );
-};

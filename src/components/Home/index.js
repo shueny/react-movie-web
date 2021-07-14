@@ -29,7 +29,7 @@ const Index = () => {
     setIsLoading(true);
     await fetch(endpoint).then((response) =>
       response.json().then((res) => {
-        console.log(res);
+        // console.log(res);
         setMovieList(res.results);
         setCurrentPage(res.page);
         setTotalPage(res.total_pages);
@@ -45,6 +45,7 @@ const Index = () => {
   };
 
   const loadMoreItems = () => {
+    // console.log("click more");
     let endpoint = "";
     setIsLoading(true);
     if (searchTerm === "") {
@@ -59,14 +60,15 @@ const Index = () => {
     fetchMovies(endpoint);
   };
 
-  const onSearchTerm = (searchTerm) => {
-    console.log("searchTerm:", searchTerm);
+  const onSearchTerm = (searchText) => {
+    // console.log("searchTerm:", searchText);
+    setSearchTerm(searchText);
     let endpoint = "";
     setIsLoading(true);
-    if (searchTerm === "") {
+    if (searchText === "") {
       endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
     } else {
-      endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${searchTerm}`;
+      endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${searchText}`;
     }
     fetchMovies(endpoint);
   };
@@ -94,8 +96,15 @@ const Index = () => {
           <FourColGrid
             source={movieList}
             title={searchTerm ? "Search Results" : "Popular Movies"}
+            isLoading={isLoading}
           />
-          <LoadMoreBtn />
+          {currentPage <= totalPage ? (
+            <LoadMoreBtn
+              onClick={loadMoreItems}
+              text="Load more"
+              isLoading={isLoading}
+            />
+          ) : null}
         </div>
       )}
     </div>

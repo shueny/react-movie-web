@@ -7,6 +7,8 @@ import {
   CardMedia,
   CardContent,
   CardActionArea,
+  Paper,
+  CircularProgress,
 } from "@material-ui/core";
 import "./MovieThumb.css";
 
@@ -19,17 +21,24 @@ import {
 } from "../../../config";
 
 const Index = (props) => {
-  const { item } = props;
-  console.log(item);
+  const { item, isLoading } = props;
+  // console.log(item);
   return (
     <Grid item xs={3} key={`${item.id}`}>
       <Card className="rmdb-moviethumb">
-        <CardActionArea>
-          <img
-            src={`${IMAGE_BASE_URL}${POSTER_SIZE}${item.poster_path}`}
-            alt={item.original_title}
-          />
-        </CardActionArea>
+        {isLoading ? (
+          <CircularProgress />
+        ) : (
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              alt={item.original_title}
+              height="auto"
+              image={`${IMAGE_BASE_URL}${POSTER_SIZE}${item.poster_path}`}
+              title={item.original_title}
+            />
+          </CardActionArea>
+        )}
       </Card>
     </Grid>
   );
