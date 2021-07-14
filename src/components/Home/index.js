@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Container from "@material-ui/core/Container";
-import {
-  API_URL,
-  API_KEY,
-  IMAGE_BASE_URL,
-  BACKDROP_SIZE,
-  POSTER_SIZE,
-} from "../../config";
+// import Container from "@material-ui/core/Container";
+import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from "../../config";
 import {
   HeroImage,
   SearchBar,
   LoadMoreBtn,
   FourColGrid,
-  MovieThumb,
+  // MovieThumb,
   Spinner,
 } from "../elements";
 import "./Home.css";

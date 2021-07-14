@@ -11,7 +11,7 @@ const Index = (props) => {
 
   const handleSearch = (text) => {
     console.log("handleSearch:", text);
-    // setValue(text);
+    setValue(text);
     onSearch(text);
     // if (this.timeout) clearTimeout(this.timeout);
     // this.timeout = setTimeout(() => {

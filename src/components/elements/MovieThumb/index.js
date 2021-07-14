@@ -1,13 +1,9 @@
 import React from "react";
-import FontAwesome from "react-fontawesome";
 import {
-  Container,
   Grid,
   Card,
   CardMedia,
-  CardContent,
   CardActionArea,
-  Paper,
   CircularProgress,
 } from "@material-ui/core";
 import "./MovieThumb.css";
