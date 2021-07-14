@@ -10,7 +10,7 @@ jobs:
       MY_SECRET   : ${{secrets.secret_commit}}
       USER_NAME   : shueny
       USER_EMAIL  : shuen29@gmail.com
-      PUBLISH_DIR : ./dist
+      PUBLISH_DIR : ./public
     runs-on: ubuntu-latest
     strategy:
       matrix:
