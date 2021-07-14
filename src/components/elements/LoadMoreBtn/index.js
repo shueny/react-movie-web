@@ -1,10 +1,11 @@
 import React from "react";
-import FontAwesome from "react-fontawesome";
-import { Container, Grid, Button, CircularProgress } from "@material-ui/core";
+// import FontAwesome from "react-fontawesome";
+import { Button } from "@material-ui/core";
 import "./LoadMoreBtn.css";
 
 const Index = (props) => {
   const { onClick, text, isLoading } = props;
+  console.log("loadmore btn:", isLoading);
   return (
     <Button
       variant="contained"
