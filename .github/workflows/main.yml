@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: deploy gh-pages
 
 # Controls when the workflow will run
 on:
@@ -19,9 +19,9 @@ jobs:
   build:
     name: Build and deploy gh-pages
     env:
-      MY_SECRET   : ${{secrets.commit_secret}}
-      USER_NAME   : githubaction
-      USER_EMAIL  : githubaction@fake.com
+      MY_SECRET   : ${{secrets.secret_commit}}
+      USER_NAME   : shueny
+      USER_EMAIL  : shuen29@gmail.com
       PUBLISH_DIR : ./dist
     runs-on: ubuntu-latest
     strategy:
