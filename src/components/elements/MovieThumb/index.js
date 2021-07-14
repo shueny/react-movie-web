@@ -12,13 +12,7 @@ import {
 } from "@material-ui/core";
 import "./MovieThumb.css";
 
-import {
-  API_URL,
-  API_KEY,
-  IMAGE_BASE_URL,
-  BACKDROP_SIZE,
-  POSTER_SIZE,
-} from "../../../config";
+import { IMAGE_BASE_URL, POSTER_SIZE } from "../../../config";
 
 const Index = (props) => {
   const { item, isLoading } = props;
