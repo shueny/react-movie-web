@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Grid } from "@material-ui/core";
 import "./Header.css";
 
@@ -17,7 +18,9 @@ const Index = () => {
           alignItems="center"
         >
           <Grid item xs={6}>
-            <img src={logo} className="rmdb-logo" alt="rmdb-logo" />
+            <Link to="/">
+              <img src={logo} className="rmdb-logo" alt="rmdb-logo" />
+            </Link>
           </Grid>
           <Grid item xs={6}>
             <img src={tmdbLogo} className="rmdb-tmdb-logo" alt="rmdb-logo" />

@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar";
 import MovieThumb from "./MovieThumb";
 import LoadMoreBtn from "./LoadMoreBtn";
 import Spinner from "./Spinner";
+import NotFound from "./NotFound";
 
 export {
   Actor,
@@ -16,4 +17,5 @@ export {
   MovieThumb,
   LoadMoreBtn,
   Spinner,
+  NotFound,
 };

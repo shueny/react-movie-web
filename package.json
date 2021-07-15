@@ -16,5 +16,6 @@
     "build": "CI=false && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "homepage": "https://shueny.github.io/react-movie-web/"
 }

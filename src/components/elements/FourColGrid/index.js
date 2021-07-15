@@ -21,14 +21,20 @@ const Index = (props) => {
           </Typography>
         </div>
       ) : null}
-      <Grid container spacing={3}>
-        {source.map((v) => {
-          // console.log("source item:", v);
-          return (
-            <MovieThumb item={v} isLoading={isLoading} key={`thumb-${v.id}`} />
-          );
-        })}
-      </Grid>
+      {source.length > 0 ? (
+        <Grid container spacing={3}>
+          {source.map((v) => {
+            // console.log("source item:", v);
+            return (
+              <MovieThumb
+                item={v}
+                isLoading={isLoading}
+                key={`thumb-${v.id}`}
+              />
+            );
+          })}
+        </Grid>
+      ) : null}
     </React.Fragment>
   );
 };
