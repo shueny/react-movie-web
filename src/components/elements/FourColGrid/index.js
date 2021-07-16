@@ -26,11 +26,13 @@ const Index = (props) => {
           {source.map((v) => {
             // console.log("source item:", v);
             return (
-              <MovieThumb
-                item={v}
-                isLoading={isLoading}
-                key={`thumb-${v.id}`}
-              />
+              <Grid v xs={3} key={`${v.id}`}>
+                <MovieThumb
+                  item={v}
+                  isLoading={isLoading}
+                  key={`thumb-${v.id}`}
+                />
+              </Grid>
             );
           })}
         </Grid>

@@ -21,16 +21,16 @@ const Index = () => {
 
   const fetchMovies = async (endpoint) => {
     setIsLoading(true);
-    await fetch(endpoint).then((response) =>
-      response.json().then((res) => {
+    await fetch(endpoint)
+      .then((response) => response.json())
+      .then((res) => {
         // console.log(res);
         setMovieList(res.results);
         setCurrentPage(res.page);
         setTotalPage(res.total_pages);
         setHeroImage(res.results[0]);
         setIsLoading(false);
-      })
-    );
+      });
   };
 
   const reload = () => {
