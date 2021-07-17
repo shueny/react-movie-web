@@ -1,5 +1,7 @@
 .rmdb-actor {
   box-sizing: border-box;
+  box-shadow: none !important;
+  background-color: #1c1c1c !important;
 }
 
 .rmdb-actor img {
@@ -10,9 +12,9 @@
 }
 
 .rmdb-actor-name {
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
   font-size: 22px;
-  color:#fff;
+  color: #fff;
   float: left;
   margin: 10px 20px;
   width: 40%;
@@ -20,9 +22,9 @@
 }
 
 .rmdb-actor-character {
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
   font-size: 18px;
-  color:#fff;
+  color: #fff;
   float: left;
   margin: 0 20px 10px 20px;
   width: 40%;

@@ -7,10 +7,21 @@ import { MovieThumb } from "../index";
 const Index = (props) => {
   const { source, title, isLoading } = props;
 
+  const renderElements = () => {
+    const gridElements = props.children.map((el, i) => {
+      return (
+        <Grid item xs={3} key={`${i}-${el.id}`}>
+          {el}
+        </Grid>
+      );
+    });
+    return gridElements;
+  };
+
   return (
     <React.Fragment>
       {title ? (
-        <div className="rmdb-grid ">
+        <div className="rmdb-grid">
           <Typography
             gutterBottom
             variant="h1"
@@ -21,22 +32,9 @@ const Index = (props) => {
           </Typography>
         </div>
       ) : null}
-      {source.length > 0 ? (
-        <Grid container spacing={3}>
-          {source.map((v) => {
-            // console.log("source item:", v);
-            return (
-              <Grid v xs={3} key={`${v.id}`}>
-                <MovieThumb
-                  item={v}
-                  isLoading={isLoading}
-                  key={`thumb-${v.id}`}
-                />
-              </Grid>
-            );
-          })}
-        </Grid>
-      ) : null}
+      <Grid container spacing={3}>
+        {renderElements()}
+      </Grid>
     </React.Fragment>
   );
 };

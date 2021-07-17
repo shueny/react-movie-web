@@ -6,7 +6,7 @@ import {
   SearchBar,
   LoadMoreBtn,
   FourColGrid,
-  // MovieThumb,
+  MovieThumb,
   Spinner,
 } from "../elements";
 import "./Home.css";
@@ -91,7 +91,14 @@ const Index = () => {
             source={movieList}
             title={searchTerm ? "Search Results" : "Popular Movies"}
             isLoading={isLoading}
-          />
+          >
+            {movieList.map((el, i) => {
+              return (
+                <MovieThumb key={`movie-${i}`} isClickable={true} item={el} />
+              );
+            })}
+          </FourColGrid>
+
           {currentPage <= totalPage ? (
             <LoadMoreBtn
               onClick={loadMoreItems}
