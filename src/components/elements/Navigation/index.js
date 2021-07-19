@@ -16,7 +16,7 @@ const Index = (props) => {
     <div className="rmdb-navigation">
       <div className="rmdb-navigation-content">
         <Breadcrumbs aria-label="breadcrumb">
-          <Link color="inherit" href="/">
+          <Link color="inherit" href="/react-movie-web/">
             Home
           </Link>
           <Typography color="textPrimary">{movieName}</Typography>
