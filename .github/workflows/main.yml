@@ -31,8 +31,8 @@ jobs:
         npm run build
     - name: Deploy
       run: |
-        git config --global user.name $USER_NAME
-        git config --global user.email $USER_EMAIL
+        git config --global user.name shueny
+        git config --global user.email shuen29@gmail.com
         git remote set-url origin https://$MY_SECRET@github.com/shueny/react-movie-web.git
         npm run deploy
     - name: Commit files
