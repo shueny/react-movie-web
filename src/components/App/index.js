@@ -11,8 +11,8 @@ const Index = () => {
       <React.Fragment>
         <Header />
         <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/:movieId" component={Movie} exact />
+          <Route path="/react-movie-web/" component={Home} exact />
+          <Route path="/react-movie-web/:movieId" component={Movie} exact />
           <Route component={NotFound} />
         </Switch>
       </React.Fragment>
