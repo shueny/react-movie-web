@@ -11,7 +11,7 @@ function handleClick(event) {
 
 const Index = (props) => {
   const { movieName } = props;
-  console.log(movieName);
+
   return (
     <div className="rmdb-navigation">
       <div className="rmdb-navigation-content">

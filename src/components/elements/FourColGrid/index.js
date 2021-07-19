@@ -2,8 +2,6 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import "./FourColGrid.css";
 
-import { MovieThumb } from "../index";
-
 const Index = (props) => {
   const { source, title, isLoading } = props;
 

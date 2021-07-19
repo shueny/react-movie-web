@@ -31,7 +31,6 @@ const Index = (props) => {
             <MovieThumb item={item} isClickable={false} />
           </div>
         )}
-        MovieInfo
       </div>
     </Box>
   );

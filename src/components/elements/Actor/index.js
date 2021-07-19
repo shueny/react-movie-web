@@ -7,12 +7,11 @@ const POSTER_SIZE = "w154";
 
 const Index = (props) => {
   const { actor } = props;
-  console.log(actor);
+
   const IMAGE_URL = actor.profile_path
     ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
     : "./images/no_image.jpg";
 
-  console.log(actor, IMAGE_URL);
   return (
     <Card className="rmdb-actor">
       <img src={IMAGE_URL} alt={actor.name} />

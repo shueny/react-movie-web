@@ -13,7 +13,7 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from "../../../config";
 
 const Index = (props) => {
   const { item, isLoading, isClickable = true } = props;
-  console.log(item);
+
   return (
     <Card className="rmdb-moviethumb">
       {isLoading ? (

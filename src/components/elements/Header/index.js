@@ -26,7 +26,6 @@ const Index = () => {
             <img src={tmdbLogo} className="rmdb-tmdb-logo" alt="rmdb-logo" />
           </Grid>
         </Grid>
-        "Header"
       </Container>
     </div>
   );
