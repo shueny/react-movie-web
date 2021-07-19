@@ -18,7 +18,7 @@ const Index = () => {
           alignItems="center"
         >
           <Grid item xs={6}>
-            <Link to="/">
+            <Link to="/react-movie-web/">
               <img src={logo} className="rmdb-logo" alt="rmdb-logo" />
             </Link>
           </Grid>
