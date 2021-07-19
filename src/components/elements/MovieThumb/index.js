@@ -22,7 +22,7 @@ const Index = (props) => {
         <CardActionArea>
           <Link
             to={{
-              pathname: `/${item.id || null}`,
+              pathname: `/react-movie-web/${item.id || null}`,
               moviename: `${item.title}`,
             }}
           >
