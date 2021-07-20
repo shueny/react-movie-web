@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Grid,
-  Card,
-  CardMedia,
-  CardActionArea,
-  CircularProgress,
-  Typography,
-} from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import {
   Navigation,
   MovieInfo,
@@ -18,30 +10,30 @@ import {
 } from "../elements";
 import "./Movie.css";
 
-import { IMAGE_BASE_URL, POSTER_SIZE, API_KEY, API_URL } from "../../config";
+import { API_KEY, API_URL } from "../../config";
 
 const Index = (props) => {
   const {
-    id,
-    title,
     match: { params },
   } = props;
   const [movie, setMovie] = useState(null);
   const [actors, setActors] = useState(null);
   const [director, setDirector] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log("Movie:", id, title, params);
 
   const fetchDirector = async (endpoint) => {
     fetch(endpoint)
       .then((response) => response.json())
       .then((res) => {
-        console.log("director:", res);
-
         const direct = res.crew.filter((v) => v.job === "Director");
         setDirector(direct);
         setActors(res.cast);
         setLoading(false);
+
+        localStorage.setItem(
+          `${movie.id}`,
+          JSON.stringify({ director: direct, actors: res.cast })
+        );
       });
   };
 
@@ -67,7 +59,6 @@ const Index = (props) => {
   }, []);
 
   if (!movie) return null;
-  console.log(movie, actors);
   return (
     <div className="rmdb-movie">
       {movie ? (
@@ -76,6 +67,7 @@ const Index = (props) => {
           <MovieInfo
             backdrop_path={movie && movie.backdrop_path}
             item={movie}
+            directors={director}
           />
           <MovieInfoBar
             time={movie.runtime}

@@ -16,7 +16,7 @@ const Index = () => {
   const [heroImage, setHeroImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPage, setTotalPage] = useState(null);
+  const [totalPages, setTotalPages] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
   const fetchMovies = async (endpoint) => {
@@ -27,15 +27,39 @@ const Index = () => {
         // console.log(res);
         setMovieList(res.results);
         setCurrentPage(res.page);
-        setTotalPage(res.total_pages);
+        setTotalPages(res.total_pages);
         setHeroImage(res.results[0]);
         setIsLoading(false);
-      });
+
+        if (searchTerm === "") {
+          localStorage.setItem(
+            "stateDatas",
+            JSON.stringify({
+              movieList: res.results,
+              heroImage: res.results[0],
+              isLoading: false,
+              currentPage: res.page,
+              totalPages: res.total_pages,
+            })
+          );
+        }
+      })
+      .catch((error) => console.error("Error:", error));
   };
 
   const reload = () => {
-    const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage}`;
-    fetchMovies(endpoint);
+    if (localStorage.getItem("stateDatas")) {
+      const fetchStorageData = JSON.parse(localStorage.getItem("stateDatas"));
+      console.log(fetchStorageData);
+      setMovieList(fetchStorageData.movieList);
+      setCurrentPage(fetchStorageData.currentPage);
+      setTotalPages(fetchStorageData.totalPages);
+      setHeroImage(fetchStorageData.heroImage);
+      setIsLoading(false);
+    } else {
+      const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage}`;
+      fetchMovies(endpoint);
+    }
   };
 
   const loadMoreItems = () => {
@@ -99,7 +123,7 @@ const Index = () => {
             })}
           </FourColGrid>
 
-          {currentPage <= totalPage ? (
+          {currentPage <= totalPages ? (
             <LoadMoreBtn
               onClick={loadMoreItems}
               text="Load more"

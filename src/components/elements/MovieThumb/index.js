@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import PropTypes from "prop-types";
 import {
-  Grid,
   Card,
   CardMedia,
   CardActionArea,
@@ -10,8 +10,15 @@ import {
 import "./MovieThumb.css";
 
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../../config";
+import "./MovieThumb.css";
 
 const Index = (props) => {
+  // const propsTypes = {
+  //   item: PropTypes.object,
+  //   isLoading: PropTypes.bool,
+  //   isClickable: PropTypes.bool,
+  // };
+
   const { item, isLoading, isClickable = true } = props;
 
   return (
@@ -55,4 +62,5 @@ const Index = (props) => {
     </Card>
   );
 };
+
 export default Index;

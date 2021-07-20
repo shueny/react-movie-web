@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import FontAwesome from "react-fontawesome";
 import { calcTime, convertMoney } from "../../../helpers";
 import { Grid } from "@material-ui/core";
@@ -7,7 +6,7 @@ import "./MovieInfoBar.css";
 
 const Index = (props) => {
   const { time = null, budget = 0, revenue = 0 } = props;
-  console.log(time, budget, revenue);
+
   return (
     <div className="rmdb-movieinfobar">
       <div className="rmdb-movieinfobar-content">

@@ -4,11 +4,6 @@ import { Typography, Breadcrumbs, Link } from "@material-ui/core";
 
 import "./Navigation.css";
 
-function handleClick(event) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
-
 const Index = (props) => {
   const { movieName } = props;
 

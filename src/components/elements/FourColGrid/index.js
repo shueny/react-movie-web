@@ -3,7 +3,7 @@ import { Grid, Typography } from "@material-ui/core";
 import "./FourColGrid.css";
 
 const Index = (props) => {
-  const { source, title, isLoading } = props;
+  const { title } = props;
 
   const renderElements = () => {
     const gridElements = props.children.map((el, i) => {
